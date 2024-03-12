@@ -9,7 +9,8 @@
 <body>
     <?php
 //Opprette kobling
-		$kobling = new mysqli('localhost', 'root', 'root', 'faq');
+		include('connection-info.php');
+		$kobling = new mysqli($tjener, $brukernavn, $passord, $database);
 		
 		//Sjekk om kobling virker
 		if($kobling->connect_error) {

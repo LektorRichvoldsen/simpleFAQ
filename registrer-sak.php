@@ -16,8 +16,9 @@
 		$sporsmaal = $_POST['sporsmaal'];
 		$dato = date('Y-m-d H:i:s'); //henter tidspunktet akkurat nå
 
+		include('connection-info.php');
 		//Koble til databasen
-		$dbc = mysqli_connect('localhost', 'root', 'root', 'faq')
+		$dbc = mysqli_connect($tjener, $brukernavn, $passord, $database)
 			or die('Error connecting to MySQL server.');
 
 		//Gjøre klar SQL-strengen
